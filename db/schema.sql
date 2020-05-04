@@ -6,4 +6,4 @@ CREATE TABLE burger
     burger_name VARCHAR(60) NOT NULL,
     eaten BOOLEAN,
 	PRIMARY KEY (burger_id)
-    );
+);
