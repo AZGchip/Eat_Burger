@@ -12,14 +12,15 @@ const orm = {
         let queryString = "INSERT INTO burger(burger_id,eaten) VALUES (??,false)"
         connect.query(queryString,[burgerName], function(err,result){
             if(err)throw err;
-            return result
+            return result;
         })
     },
-    edit: function(burgerName,boolian){
-        let queryString = "UPDATE burger SET eaten = ?? [WHERE burger_name = ??];";
-        connect.query(queryString,[boolian,burgerName],function(err,result){
+    edit: function(boolian,burger_id){
+        let queryString = "UPDATE burger SET eaten = ?? [WHERE burger_id = ??];";
+        connect.query(queryString,[boolian,burger_id],function(err,result){
             if (err)throw err;
-            return result
+            return result;
         })
     },
 }
+module.exports = orm;
