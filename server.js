@@ -7,9 +7,12 @@ const PORT = process.env.PORT || 7500;
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get("/", function(req, res) {
-    res.render("index");
-  });
+const routes = require("./controllers/burgers_controller");
+app.use(express.static(path.join(__dirname, "./", "public")))
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+
+app.use(routes)
 
 
 app.listen(PORT, function() {

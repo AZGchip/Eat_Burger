@@ -1,0 +1,25 @@
+
+<h1>burgers</h1>
+<ul>
+{{#each data}}
+    {{#unless eaten}}
+  <li>
+	{{burger_name}}
+	<button class="eat" data-id="{{burger_id}}" data-eaten="true">
+        Eat burger
+	</button>
+</li>
+{{/unless}}
+{{/each}}
+</ul>
+<h1>eaten burgers</h1>
+<ul>
+{{#each data}}
+    {{#if eaten}}
+  <li>
+	{{burger_name}}
+	
+</li>
+{{/if}}
+{{/each}}
+</ul>
