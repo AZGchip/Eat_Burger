@@ -22,5 +22,5 @@ const orm = {
            callback(result)
         })
     },
-}
+};
 module.exports = orm;

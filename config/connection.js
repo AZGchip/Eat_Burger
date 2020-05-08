@@ -1,6 +1,6 @@
 //required variables
 const sql = require("mysql");
-const connection;
+let connection;
 //MySQL connection info
 if (process.env.JAWSDB_URL) {
     connection = sql.createConnection(process.env.JAWSDB_URL);
