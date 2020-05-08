@@ -16,8 +16,8 @@ const orm = {
         })
     },
     edit: function(table,column,value,id,idVal,callback){
-        let queryString = `UPDATE ${table} SET ${column} = ${value} [WHERE ${id} = ${idVal}];`;
-        connect.query(queryString,[boolian,burger_id],function(err,result){
+        let queryString = `UPDATE ${table} SET ${column} = ${value} WHERE ${id} = ${idVal};`;
+        connect.query(queryString,function(err,result){
             if (err)throw err;
            callback(result)
         })

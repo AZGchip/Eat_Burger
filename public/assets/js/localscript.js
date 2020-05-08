@@ -7,13 +7,12 @@ $(function(){
         let burgId = $(this).data("id");
         
         //PUT Request to update a burger's "eaten" status to true
-        $.ajax("/eat" + id, {
-            type: "PUT",
-            data: newSleepState
+        $.ajax( {
+            method: "PUT",
+            url: "/eat/" + burgId
           }).then(
             function() {
-              console.log("changed sleep to", newSleep);
-              // Reload the page to get the updated list
+              // Reload the page to get the updated database info
               location.reload();
             }
           );
