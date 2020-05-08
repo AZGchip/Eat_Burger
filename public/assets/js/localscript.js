@@ -17,5 +17,18 @@ $(function(){
             }
           );
     })
+    $(".add-burger").on("submit",function(event){
+      event.preventDefault();
+      let burgerName = $("#burger").val().trim();
+      $.ajax( {
+        method: "POST",
+        url: "/add/" + burgerName
+      }).then(
+        function() {
+          // Reload the page to get the updated database info
+          location.reload();
+        }
+      );
+    });
 }
 )

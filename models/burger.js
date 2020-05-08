@@ -7,7 +7,7 @@ const burg = {
         });
       },
     insertBurger:function(burgername,callback){
-        orm.insert("burger","burger_name,eaten",`${burgername},false`,function(res){
+        orm.insert("burger","burger_name,eaten",`"${burgername}",false`,function(res){
             callback(res);
         });
     },

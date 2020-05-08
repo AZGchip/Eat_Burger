@@ -17,5 +17,13 @@ router.put("/eat/:id", function (req, res) {
         );
     })
 });
+router.post("/add/:id", function (req, res) {
+    console.log(req.params.id)
+    let burgerName = req.params.id;
+    burg.insertBurger(burgerName,function (result) {
+        res.render("index", {data: result,}
+        );
+    })
+});
 
 module.exports = router;

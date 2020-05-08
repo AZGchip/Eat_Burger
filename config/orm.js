@@ -9,8 +9,8 @@ const orm = {
         })
     },
     insert: function(table,tableVal,values,callback){
-        let queryString = "INSERT INTO ?(?) VALUES (?)"
-        connect.query(queryString,[table,tableVal,values], function(err,result){
+        let queryString = `INSERT INTO ${table}(${tableVal}) VALUES (${values})`
+        connect.query(queryString, function(err,result){
             if(err){throw err};
             callback(result)
         })
