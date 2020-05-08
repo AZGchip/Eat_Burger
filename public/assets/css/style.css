@@ -1,0 +1,8 @@
+body{
+ background-image: url("/assets/img/wood.jpg") ; 
+ background-attachment: fixed;  
+ 
+}
+.container{
+background-color: lightgray;
+}

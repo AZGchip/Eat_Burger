@@ -1,32 +1,52 @@
-<h1>burgers</h1>
-<ul>
-    {{#each data}}
-    {{#unless eaten}}
-    <li>
-        {{burger_name}}
-        <button class="eat" data-id="{{burger_id}}" data-eaten="true">
-            Eat burger
-        </button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
-<h1>eaten burgers</h1>
-<ul>
-    {{#each data}}
-    {{#if eaten}}
-    <li>
-        {{burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
-<h3>Add a burger</h3>
-<form class="add-burger">
 
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="name">
-  </div>
-  <button type="submit">Add Burger</button>
-</form>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Burgers</h1>
+        <hr>
+        {{#each data}}
+        {{#unless eaten}}
+        <div class="card mb-3 bg-light" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="/assets/img/download.png" class="card-img" alt="burger image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{burger_name}}</h5>
+                        <button class="eat" data-id="{{burger_id}}" data-eaten="true">
+                            Eat burger
+                        </button>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{/unless}}
+        {{/each}}
+    </div>
+    <div class="col-md-6">
+        <h1>Eaten Burgers</h1>
+    <hr>
+        {{#each data}}
+        {{#if eaten}}
+        <div class="card mb-3 bg-light" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="/assets/img/sideplate.jpg" class="card-img" alt="eaten burger image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{burger_name}}</h5>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>
