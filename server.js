@@ -5,14 +5,17 @@ const path = require("path")
 // lets heroku set the port. otherwise it is 7500
 const PORT = process.env.PORT || 7500;
 
+//uses handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// routes 
 const routes = require("./controllers/burgers_controller");
+
+//middleware
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(routes)
 
 
