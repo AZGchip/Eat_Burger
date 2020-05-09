@@ -15,14 +15,17 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{burger_name}}</h5>
-                        <button class="eat" data-id="{{burger_id}}" data-eaten="true">
+                        <h4 class="card-title">{{burger_name}}</h4>
+                        <button type="button" class="eat btn btn-secondary" data-id="{{burger_id}}" data-eaten="true">
                             Eat burger
+                        </button>
+                        <button type="button"class="clean-up btn btn-danger" data-id="{{burger_id}}" data-eaten="true">
+                            Throw Away
                         </button>
                         <p class="card-text"><small class="text-muted">Burger #{{burger_id}}</small></p>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
 
         {{/unless}}
@@ -40,8 +43,8 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{burger_name}}</h5>
-                        <button class="clean-up" data-id="{{burger_id}}" data-eaten="true">
+                        <h4 class="card-title">{{burger_name}}</h4>
+                        <button type="button" class="clean-up btn btn-success" data-id="{{burger_id}}" data-eaten="true">
                             Clean Up
                         </button>
                         <p class="card-text"><small class="text-muted">Burger #{{burger_id}}</small></p>
