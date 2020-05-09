@@ -17,6 +17,22 @@ $(function(){
             }
           );
     })
+    $(".clean-up").on("click",function(event){
+      event.stopPropagation();
+      //gets clicked element's data-id
+      let burgId = $(this).data("id");
+      
+      //PUT Request to update a burger's "eaten" status to true
+      $.ajax( {
+          method: "DELETE",
+          url: "/delete/" + burgId
+        }).then(
+          function() {
+            // Reload the page to get the updated database info
+            location.reload();
+          }
+        );
+  })
     $(".add-burger").on("submit",function(event){
       event.preventDefault();
       let burgerName = $("#burger").val().trim();

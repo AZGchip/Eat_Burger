@@ -25,5 +25,10 @@ router.post("/add/:id", function (req, res) {
         );
     })
 });
-
+router.delete("/delete/:id",function(req,res){
+    let deleteId = req.params.id;
+    burg.deleteBurger(deleteId,function(result){
+        res.render("index",{data:result});
+    })
+})
 module.exports = router;
